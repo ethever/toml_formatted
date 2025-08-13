@@ -6,8 +6,4 @@ edition = "2024"
 [dependencies]
 toml_formatted_macros = { workspace = true }
 toml_formatted_core   = { workspace = true }
-
-[dev-dependencies]
-toml_edit = { workspace = true, features = ["serde"] }
-serde     = { version = "1.0.219", features = ["derive"] }
-toml      = "0.9.5"
+toml_edit             = { workspace = true, features = ["serde"] }

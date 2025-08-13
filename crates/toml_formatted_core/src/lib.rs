@@ -1,4 +1,5 @@
 use toml_edit::DocumentMut;
+use toml_edit::{Array, InlineTable, value};
 
 pub trait TomlDocExt {
     fn to_toml_document_formatted(&self) -> DocumentMut;
@@ -9,8 +10,6 @@ pub trait TomlDocExt {
 
 /// Convert an array-of-tables at `doc[field]` into an inline array of inline tables.
 pub fn inline_field(doc: &mut DocumentMut, field: &str) -> bool {
-    use toml_edit::{Array, InlineTable, value};
-
     let item = &mut doc[field];
     if let Some(aot) = item.as_array_of_tables() {
         let mut arr = Array::default();

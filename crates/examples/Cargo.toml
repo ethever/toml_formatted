@@ -1,0 +1,13 @@
+[package]
+name    = "examples"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+toml_formatted = { workspace = true }
+serde          = { workspace = true }
+
+[dev-dependencies]
+toml_edit = { workspace = true, features = ["serde"] }
+toml      = "0.9.5"
+serde     = { workspace = true }

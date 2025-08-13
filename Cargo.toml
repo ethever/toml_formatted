@@ -1,5 +1,6 @@
 [workspace]
 members = [
+    "crates/examples",
     "crates/toml_formatted",
     "crates/toml_formatted_core",
     "crates/toml_formatted_macros",
@@ -9,4 +10,7 @@ resolver = "3"
 [workspace.dependencies]
 toml_formatted_macros = { path = "./crates/toml_formatted_macros" }
 toml_formatted_core   = { path = "./crates/toml_formatted_core" }
-toml_edit             = { version = "^0.22", features = ["serde", "parse"] }
+toml_formatted        = { path = "./crates/toml_formatted" }
+
+toml_edit = { version = "^0.22", features = ["serde", "parse"] }
+serde     = { version = "1.0.219", features = ["derive"] }
