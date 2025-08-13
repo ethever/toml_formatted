@@ -33,12 +33,6 @@ pub fn derive_toml_doc(input: TokenStream) -> TokenStream {
 
     let field_strs: Vec<String> = inline_fields.iter().map(|id| id.to_string()).collect();
 
-    // let facade_path: syn::Path = match crate_name("toml_formatted") {
-    //     Ok(FoundCrate::Name(n)) => parse_quote!(::#n),
-    //     Ok(FoundCrate::Itself) => parse_quote!(::toml_formatted),
-    //     Err(_) => parse_quote!(::toml_formatted),
-    // };
-
     let expanded = quote! {
         impl ::toml_formatted::TomlDocExt for #ident {
             fn to_toml_document_formatted(&self) -> ::toml_formatted::toml_edit::DocumentMut {
