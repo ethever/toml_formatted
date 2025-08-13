@@ -34,7 +34,7 @@ pub fn derive_toml_doc(input: TokenStream) -> TokenStream {
     let field_strs: Vec<String> = inline_fields.iter().map(|id| id.to_string()).collect();
 
     let expanded = quote! {
-        impl toml_formatted_core::TomlDocExt for #ident {
+        impl ::toml_formatted_core::TomlDocExt for #ident {
             fn to_toml_document_formatted(&self) -> toml_edit::DocumentMut {
                 let pretty_string = toml_edit::ser::to_string_pretty(&self).unwrap();
                 use std::str::FromStr;
@@ -45,7 +45,7 @@ pub fn derive_toml_doc(input: TokenStream) -> TokenStream {
                 //     .expect("serialize to toml_edit::Document");
 
                 #(
-                    let _ = toml_formatted_core::inline_field(&mut __doc, #field_strs);
+                    let _ = ::toml_formatted_core::inline_field(&mut __doc, #field_strs);
                 )*
 
                 __doc

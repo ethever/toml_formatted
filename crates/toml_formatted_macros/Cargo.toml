@@ -11,5 +11,6 @@ proc-macro2 = "1"
 quote       = "1"
 syn         = { version = "2", features = ["full"] }
 
-toml_formatted_core = { path = "../toml_formatted_core" }
-toml_edit           = { workspace = true }
+toml_formatted_core = { workspace = true }
+# toml_formatted_core = { path = "../toml_formatted_core" }
+toml_edit = { workspace = true }
