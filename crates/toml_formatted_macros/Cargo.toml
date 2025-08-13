@@ -1,0 +1,15 @@
+[package]
+name    = "toml_formatted_macros"
+version = "0.1.0"
+edition = "2024"
+
+[lib]
+proc-macro = true
+
+[dependencies]
+proc-macro2 = "1"
+quote       = "1"
+syn         = { version = "2", features = ["full"] }
+
+toml_formatted_core = { path = "../toml_formatted_core" }
+toml_edit           = { workspace = true }
