@@ -42,6 +42,10 @@ mod tests {
                     ..Default::default()
                 },
                 Default::default(),
+                Default::default(),
+                Default::default(),
+                Default::default(),
+                Default::default(),
             ],
             name: Default::default(),
         };
